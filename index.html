@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - NarraMap</title>
+    
+    <!-- Referencia al icono para la pestaña del navegador -->
+    <link rel="icon" href="icon.png" type="image/png">
+    
+    <title>Aviso de Privacidad - NarraMap</title>
     
     <!-- Importar la fuente Comfortaa desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,166 +15,198 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Paleta de Colores y Variables --- */
         :root {
-            --background-color: #1c1c1e; /* Un gris oscuro casi negro */
-            --container-color: #2c2c2e;  /* Un gris ligeramente más claro para el contenedor */
-            --text-color: #e2e2e2;       /* Un blanco suave para el texto */
-            --primary-accent-color: #c4f03f; /* Un verde-lima vibrante, inspirado en tu logo */
-            --border-color: #444444;     /* Un gris para bordes sutiles */
+            --gradient-start: #d8c3a5;
+            --gradient-mid: #c3aed6;
+            --gradient-end: #e5a9a9;
+            --container-bg: rgba(255, 255, 255, 0.8);
+            --text-color: #3d3d3d;
+            --heading-color: #2c2c2e;
+            --accent-color: #8e7dbe;
+            --border-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* --- Estilos Generales --- */
         body {
-            font-family: 'Comfortaa', sans-serif; /* Usamos la fuente de tu app */
-            line-height: 1.7;
-            background-color: var(--background-color);
-            color: var(--text-color);
+            font-family: 'Comfortaa', 'Segoe UI', Roboto, sans-serif;
             margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            background-attachment: fixed;
+            background-size: 200% 200%;
+            animation: gradient-animation 15s ease infinite;
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
         }
 
-        /* --- Contenedor Principal --- */
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2.5rem;
-            background-color: var(--container-color);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-
-        /* --- Títulos --- */
-        h1 {
-            color: #ffffff;
-            font-size: 2.2em;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+        
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
             text-align: center;
         }
 
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--container-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--heading-color);
+            font-size: 2em;
+            font-weight: 700;
+            margin: 0;
+        }
+
         h2 {
-            color: var(--primary-accent-color); /* Color de acento para subtítulos */
-            font-size: 1.6em;
-            margin-top: 3rem;
+            color: var(--accent-color);
+            font-size: 1.5em;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             padding-bottom: 0.5rem;
         }
 
-        /* --- Párrafos y Listas --- */
         p, li {
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         ul {
             padding-left: 20px;
+            list-style-type: disc;
         }
         
-        ul ul {
-            margin-top: 0.5rem;
-        }
-
         li {
             margin-bottom: 0.75rem;
         }
 
-        /* --- Elementos de Énfasis --- */
         strong {
-            color: #ffffff;
+            color: var(--heading-color);
             font-weight: 700;
         }
 
-        /* --- Enlaces --- */
         a {
-            color: var(--primary-accent-color);
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: 700;
             transition: color 0.2s ease-in-out;
         }
 
         a:hover {
-            color: #ffffff;
             text-decoration: underline;
         }
+        
+        .sensitive-data {
+            background-color: rgba(142, 125, 190, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+        }
 
-        /* --- Adaptación a Móviles --- */
         @media (max-width: 768px) {
-            .container {
-                margin: 1rem;
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.4em;
-            }
+            body { padding: 1rem 0.5rem; }
+            .container { padding: 1.5rem; }
+            .page-header { flex-direction: column; gap: 1rem; }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.3em; }
         }
     </style>
 </head>
 <body>
 
     <main class="container">
-        <h1>Política de Privacidad de NarraMap</h1>
-        <p><strong>Fecha de entrada en vigor:</strong> 8 de julio de 2025</p>
-        <p>
-            Bienvenido a NarraMap ("la Aplicación", "nosotros"). Tu privacidad es fundamental para nosotros. Esta política describe qué datos recopilamos y cómo los usamos para ofrecerte una experiencia interactiva de narrativas geolocalizadas.
-        </p>
+        <header class="page-header">
+            <img src="icon.png" alt="NarraMap Logo" class="logo">
+            <h1>Aviso de Privacidad</h1>
+        </header>
 
-        <h2>1. Información que Recopilamos</h2>
-        <p>Para el funcionamiento de la aplicación, es necesario que recopilemos los siguientes tipos de datos:</p>
+        <h2>I. Identidad y domicilio del responsable</h2>
+        <p><strong>NarraMap</strong>, con domicilio en Colonia Caminera, Tuxtla Gutiérrez, Chiapas, C.P. 29090, es responsable del tratamiento de sus datos personales conforme a este aviso de privacidad.</p>
+
+        <h2>II. Datos personales que recabamos</h2>
+        <p>Para cumplir con las finalidades descritas en este aviso, recabamos de forma directa los siguientes datos personales:</p>
         <ul>
-            <li><strong>Ubicación Precisa:</strong> Accedemos a la ubicación GPS de tu dispositivo para mostrarte narrativas cercanas y para permitirte colocar tus propias creaciones en lugares específicos del mapa.</li>
-            <li><strong>Contenido Generado por el Usuario:</strong>
-                <ul>
-                    <li><strong>Fotos:</strong> Imágenes que subes desde tu galería o capturas con la cámara para tus narrativas.</li>
-                    <li><strong>Audio:</strong> Grabaciones de voz o sonido que creas para añadir a tus historias.</li>
-                    <li><strong>Texto:</strong> Los títulos y descripciones que incluyas en tus narrativas.</li>
-                </ul>
-            </li>
-            <li><strong>Información de la Cuenta:</strong> Si la aplicación requiere un registro, recopilaremos la información necesaria para crear y mantener tu cuenta (ej. nombre, correo electrónico y contraseña).</li>
-            <li><strong>Interacciones en la App:</strong> Registramos acciones como el contenido que creas o con el que interactúas para el correcto funcionamiento de la plataforma.</li>
+            <li>Nickname (seudónimo)</li>
+            <li>Edad</li>
+            <li>Correo electrónico</li>
+            <li>Género (hombre, mujer, no binario, otro)</li>
+            <li>Contraseña (almacenada de forma cifrada)</li>
+            <li>Ubicación geográfica (GPS)</li>
+            <li>Publicaciones (texto, imágenes y audio)</li>
+            <li>Emociones inferidas mediante análisis de sentimiento</li>
+            <li>Representaciones visuales de emociones (3D / Realidad Aumentada)</li>
+        </ul>
+        <p class="sensitive-data"><strong>Datos sensibles:</strong> La emoción inferida puede considerarse un dato personal sensible, ya que puede revelar aspectos del estado emocional o psicológico del usuario.</p>
+
+        <h2>III. Finalidades del tratamiento</h2>
+        <p>Los datos personales recabados serán utilizados para las siguientes <strong>finalidades primarias</strong>, necesarias para la operación de la aplicación:</p>
+        <ul>
+            <li>Crear y gestionar su cuenta de usuario.</li>
+            <li>Permitirle crear publicaciones asociadas a una ubicación geográfica.</li>
+            <li>Analizar automáticamente el contenido emocional de las publicaciones.</li>
+            <li>Representar emociones en el mapa mediante colores, modelos 3D y/o realidad aumentada.</li>
+            <li>Visualizar publicaciones públicas de otros usuarios.</li>
+            <li>Almacenar imágenes y audios de publicaciones en servidores de terceros (Cloudinary).</li>
+        </ul>
+        <p><strong>Finalidades secundarias</strong> (opcionales y sujetas a su consentimiento):</p>
+        <ul>
+            <li>Envío de información promocional o funcional sobre actualizaciones de la app.</li>
+            <li>Análisis de uso con fines estadísticos y de mejora del producto.</li>
+        </ul>
+        <p>Usted puede negar el uso de sus datos para estas finalidades secundarias escribiendo a: <a href="mailto:contacto@narramap.lat">contacto@narramap.lat</a>.</p>
+
+        <h2>IV. Transferencias de datos personales</h2>
+        <p>Sus datos personales podrán ser transferidos a terceros únicamente para el cumplimiento de las finalidades anteriormente descritas. En particular:</p>
+        <ul>
+            <li><strong>Cloudinary:</strong> para el almacenamiento de imágenes y audios asociados a las publicaciones.</li>
+            <li>Servicios de backend, análisis de sentimiento y servidores de terceros que alojan componentes de la aplicación.</li>
+        </ul>
+        <p>Dichas transferencias se realizan con medidas adecuadas de protección y bajo el consentimiento del usuario. No se transferirán sus datos a terceros con fines comerciales sin su autorización expresa.</p>
+
+        <h2>V. Opciones para limitar el uso o divulgación de sus datos</h2>
+        <p>Puede limitar el uso o divulgación de sus datos enviando una solicitud al correo electrónico: <a href="mailto:contacto@narramap.lat">contacto@narramap.lat</a>, indicando su nombre, correo asociado a la cuenta y la acción que desea realizar.</p>
+
+        <h2>VI. Medios para ejercer los derechos ARCO</h2>
+        <p>Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales (derechos ARCO), enviando una solicitud al correo: <a href="mailto:contacto@narramap.lat">contacto@narramap.lat</a>.</p>
+        <p>Su solicitud deberá contener:</p>
+        <ul>
+            <li>Nombre completo del titular</li>
+            <li>Correo asociado a la cuenta</li>
+            <li>Descripción clara del derecho que desea ejercer</li>
+            <li>Copia de su identificación oficial (puede ser versión digital)</li>
         </ul>
 
-        <h2>2. Cómo Utilizamos tu Información</h2>
-        <ul>
-            <li><strong>Para la Funcionalidad Principal:</strong> Tu ubicación se usa para personalizar tu experiencia en el mapa. Tu contenido (fotos, audio, texto) se asocia a las localizaciones que elijas y se muestra a otros usuarios como parte de la experiencia de NarraMap.</li>
-            <li><strong>Para la Realidad Aumentada (RA):</strong> La aplicación utiliza la cámara de tu dispositivo para superponer el contenido digital sobre el mundo real en las ubicaciones designadas. No almacenamos ni compartimos el flujo de vídeo de tu cámara; solo lo procesamos en tiempo real en tu dispositivo.</li>
-            <li><strong>Para Mejorar el Servicio:</strong> Analizamos datos de uso de forma agregada y anónima para entender qué funciones son más populares y cómo podemos mejorar la aplicación.</li>
-        </ul>
+        <h2>VII. Uso de tecnologías de rastreo</h2>
+        <p>NarraMap podrá utilizar tecnologías de rastreo dentro de la aplicación para analizar el comportamiento de los usuarios, mejorar la experiencia, prevenir fraudes y optimizar el uso de recursos. Estas tecnologías no recolectan información adicional más allá de la ya indicada en este aviso.</p>
 
-        <h2>3. Almacenamiento y Uso Compartido de Datos</h2>
-        <p>
-            El contenido que generas (narrativas, imágenes, audios) y la información de tu cuenta se almacenan de forma segura en nuestros servidores para que puedas acceder a ellos y para que sean descubiertos por otros usuarios. Utilizamos cifrado (HTTPS) para proteger los datos mientras se transfieren entre tu dispositivo y nuestros servidores. No compartiremos tu información personal con terceros, excepto cuando sea necesario para el funcionamiento del servicio o si la ley nos lo exige.
-        </p>
+        <h2>VIII. Cambios al aviso de privacidad</h2>
+        <p>NarraMap se reserva el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad. Dichas modificaciones estarán disponibles dentro de la aplicación y en los medios electrónicos utilizados por NarraMap. Se recomienda revisar periódicamente este aviso.</p>
 
-        <h2>4. Permisos Requeridos por la Aplicación</h2>
-        <p>Para ofrecer una experiencia completa, NarraMap solicita los siguientes permisos:</p>
-        <ul>
-            <li><strong>Ubicación:</strong> Para las funciones basadas en el mapa.</li>
-            <li><strong>Cámara:</strong> Para la visualización en Realidad Aumentada y la captura de fotos.</li>
-            <li><strong>Micrófono:</strong> Para grabar audio para tus narrativas.</li>
-            <li><strong>Almacenamiento/Fotos:</strong> Para que puedas seleccionar imágenes de tu galería.</li>
-        </ul>
-
-        <h2>5. Seguridad de los Datos</h2>
-        <p>
-            Nos comprometemos a proteger tu información. Implementamos medidas de seguridad técnicas y organizativas, como el cifrado de datos en tránsito, para proteger tus datos contra el acceso no autorizado, la alteración o la destrucción.
-        </p>
-
-        <h2>6. Cambios a esta Política</h2>
-        <p>
-            Podemos actualizar nuestra Política de Privacidad ocasionalmente. Te notificaremos cualquier cambio publicando la nueva política en esta página. Se recomienda revisarla periódicamente.
-        </p>
-
-        <h2>7. Contacto</h2>
-        <p>
-            Si tienes alguna pregunta o sugerencia sobre nuestra Política de Privacidad, no dudes en contactarnos a través de:
-            <a href="mailto:contacto@narramap.lat">contacto@narramap.lat</a>
-        </p>
+        <h2>IX. Consentimiento</h2>
+        <p>Al utilizar NarraMap y registrar una cuenta, usted manifiesta su consentimiento para el tratamiento de sus datos personales conforme a este aviso de privacidad. En el caso de datos personales sensibles (emociones inferidas), su consentimiento expreso será recabado mediante aceptación digital dentro de la aplicación.</p>
+        
+        <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">Última actualización: 15 de julio de 2025</p>
     </main>
 
 </body>

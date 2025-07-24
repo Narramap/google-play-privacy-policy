@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Eliminación de Datos - NarraMap</title>
+    
+    <!-- Importar la fuente Comfortaa desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gradient-start: #d8c3a5; --gradient-mid: #c3aed6; --gradient-end: #e5a9a9;
+            --container-bg: rgba(255, 255, 255, 0.85); --text-color: #3d3d3d;
+            --heading-color: #2c2c2e; --accent-color: #8e7dbe;
+            --border-color: rgba(255, 255, 255, 0.5);
+            --button-bg: var(--accent-color); --button-text: #ffffff;
+        }
+        body {
+            font-family: 'Comfortaa', sans-serif; margin: 0; padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            background-attachment: fixed; background-size: 200% 200%;
+            animation: gradient-animation 15s ease infinite; color: var(--text-color); line-height: 1.7;
+        }
+        @keyframes gradient-animation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        
+        .container {
+            max-width: 700px; margin: 0 auto; background: var(--container-bg);
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border-radius: 24px; border: 1px solid var(--border-color);
+            padding: 2.5rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); text-align: center;
+        }
+        .logo { width: 60px; height: 60px; margin-bottom: 1rem; }
+        h1 { color: var(--heading-color); font-size: 2em; margin-bottom: 1rem; }
+        p { font-size: 1rem; max-width: 550px; margin-left: auto; margin-right: auto; }
+        .instructions { text-align: left; background-color: rgba(0,0,0,0.05); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; }
+        .instructions li { list-style-position: inside; padding-left: 0; }
+        .button { display: inline-block; background-color: var(--button-bg); color: var(--button-text); padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+        .button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+        .note { font-size: 0.9rem; opacity: 0.8; margin-top: 2rem; }
+        @media (max-width: 768px) {
+            body { padding: 1rem 0.5rem; } .container { padding: 1.5rem; }
+            h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <img src="icon.png" alt="NarraMap Logo" class="logo">
+        <h1>Gestiona tus Datos</h1>
+        
+        <p>En NarraMap, tienes el control sobre tu información. Si deseas eliminar partes específicas de tu contenido sin borrar toda tu cuenta, estamos aquí para ayudarte.</p>
+        
+        <div class="instructions">
+            <p><strong>Para solicitar la eliminación de datos específicos, sigue estos pasos:</strong></p>
+            <ol>
+                <li>Prepara un correo electrónico desde la dirección que usaste para registrar tu cuenta en NarraMap.</li>
+                <li>En el correo, indica claramente tu <strong>nombre de usuario (username)</strong>.</li>
+                <li>Describe con precisión qué datos quieres que eliminemos. Por ejemplo:
+                    <ul>
+                        <li>"Quiero eliminar la narrativa titulada 'Mi viaje a la cascada'".</li>
+                        <li>"Por favor, eliminen todos mis comentarios".</li>
+                        <li>"Quiero borrar todas las publicaciones que hice en el mes de mayo".</li>
+                    </ul>
+                </li>
+            </ol>
+            <p>Nuestro equipo procesará tu solicitud y te confirmará una vez que los datos hayan sido eliminados.</p>
+        </div>
+
+        <a href="mailto:contacto@narramap.lat?subject=Solicitud de Eliminación de Datos Específicos" class="button">Iniciar Solicitud por Correo</a>
+
+        <p class="note">Recuerda que si prefieres eliminar tu cuenta por completo, puedes visitar nuestra página de <a href="https://privacidad.narramap.lat/delete/">eliminación de cuenta</a>.</p>
+    </main>
+
+</body>
+</html>

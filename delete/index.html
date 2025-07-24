@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Eliminación de Cuenta - NarraMap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gradient-start: #d8c3a5; --gradient-mid: #c3aed6; --gradient-end: #e5a9a9;
+            --container-bg: rgba(255, 255, 255, 0.8); --text-color: #3d3d3d;
+            --heading-color: #2c2c2e; --accent-color: #8e7dbe;
+            --border-color: rgba(255, 255, 255, 0.5);
+            --button-bg: var(--accent-color); --button-text: #ffffff;
+        }
+        body {
+            font-family: 'Comfortaa', sans-serif; margin: 0; padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            background-attachment: fixed; background-size: 200% 200%;
+            animation: gradient-animation 15s ease infinite; color: var(--text-color); line-height: 1.7;
+        }
+        @keyframes gradient-animation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .container { max-width: 600px; margin: 0 auto; background: var(--container-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-radius: 24px; border: 1px solid var(--border-color); padding: 2.5rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); text-align: center; }
+        .logo { width: 60px; height: 60px; margin-bottom: 1rem; }
+        h1 { color: var(--heading-color); font-size: 1.8em; margin-bottom: 1rem; }
+        p { font-size: 0.95rem; }
+        .button { display: inline-block; background-color: var(--button-bg); color: var(--button-text); padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+        .button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <img src="icon.png" alt="NarraMap Logo" class="logo">
+        <h1>Solicitud de Eliminación de Cuenta</h1>
+        <p>Lamentamos que te vayas. Para solicitar la eliminación de tu cuenta de NarraMap y todos los datos asociados, por favor, envía un correo electrónico desde la dirección que usaste para registrarte.</p>
+        <p>Tu solicitud debe incluir tu <strong>nombre de usuario</strong> para que podamos procesarla correctamente.</p>
+        <p>Al procesar tu solicitud, se eliminarán permanentemente tu perfil, tus "ecos", comentarios y toda la información asociada.</p>
+        <a href="mailto:contacto@narramap.lat?subject=Solicitud de Eliminación de Cuenta de NarraMap" class="button">Enviar Correo de Solicitud</a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Normas de Seguridad Infantil - NarraMap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gradient-start: #d8c3a5; --gradient-mid: #c3aed6; --gradient-end: #e5a9a9;
+            --container-bg: rgba(255, 255, 255, 0.85); --text-color: #3d3d3d;
+            --heading-color: #2c2c2e; --accent-color: #B22222; /* Rojo oscuro para temas de seguridad */
+            --border-color: rgba(255, 255, 255, 0.5);
+        }
+        body {
+            font-family: 'Comfortaa', sans-serif; margin: 0; padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            background-attachment: fixed; background-size: 200% 200%;
+            animation: gradient-animation 15s ease infinite; color: var(--text-color); line-height: 1.7;
+        }
+        @keyframes gradient-animation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        
+        .container { max-width: 800px; margin: 0 auto; background: var(--container-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-radius: 24px; border: 1px solid var(--border-color); padding: 2.5rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); }
+        .page-header { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+        .logo { width: 60px; height: 60px; }
+        h1 { color: var(--heading-color); font-size: 2em; margin: 0; }
+        h2 { color: var(--accent-color); font-size: 1.5em; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 0.5rem; }
+        p, li { font-size: 0.95rem; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 0.75rem; }
+        strong { color: var(--heading-color); font-weight: 700; }
+        a { color: var(--accent-color); text-decoration: none; font-weight: 700; }
+        a:hover { text-decoration: underline; }
+        .important-note { background-color: rgba(178, 34, 34, 0.1); border-left: 4px solid var(--accent-color); padding: 1rem; margin-top: 1rem; border-radius: 8px; }
+        @media (max-width: 768px) { body { padding: 1rem 0.5rem; } .container { padding: 1.5rem; } .page-header { flex-direction: column; gap: 1rem; } h1 { font-size: 1.8em; } h2 { font-size: 1.3em; } }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <header class="page-header">
+            <img src="icon.png" alt="NarraMap Logo" class="logo">
+            <h1>Normas de Seguridad Infantil</h1>
+        </header>
+
+        <h2>Nuestro Compromiso</h2>
+        <p>NarraMap se compromete a crear una comunidad segura y positiva para todos nuestros usuarios. Tenemos una política de <strong>tolerancia cero</strong> con respecto a cualquier contenido que explote o ponga en peligro a menores de edad. Esto incluye, entre otros, el Material de Abuso Sexual Infantil (CSAM o EASI).</p>
+
+        <h2>Contenido Prohibido</h2>
+        <p>Está estrictamente prohibido crear, compartir, subir o distribuir cualquier contenido que represente abuso sexual, explotación o cualquier forma de daño a menores. Cualquier cuenta que se encuentre involucrada en estas actividades será <strong>eliminada permanentemente</strong> sin previo aviso.</p>
+        
+        <div class="important-note">
+            <h3>Herramientas de Denuncia para Usuarios</h3>
+            <p>La seguridad es una responsabilidad compartida. Si ves cualquier contenido o comportamiento en NarraMap que consideres inapropiado, ilegal o que viole nuestras normas, te instamos a que lo denuncies de inmediato.</p>
+            <p>Puedes hacerlo directamente desde la aplicación, buscando un botón o icono de <strong>"Denunciar"</strong> o <strong>"Reportar"</strong> en el perfil del usuario o en la publicación ("eco") en cuestión.</p>
+        </div>
+
+        <h2>Nuestro Proceso de Moderación</h2>
+        <p>Cuando recibimos una denuncia, nuestro equipo de seguridad realiza las siguientes acciones:</p>
+        <ul>
+            <li><strong>Revisión Urgente:</strong> Todas las denuncias relacionadas con la seguridad infantil son tratadas con la máxima prioridad.</li>
+            <li><strong>Acción Inmediata:</strong> Si se confirma una violación, eliminamos el contenido ofensivo y suspendemos o eliminamos permanentemente la cuenta responsable.</li>
+            <li><strong>Cooperación con las Autoridades:</strong> De acuerdo con la ley, reportamos todo el material de abuso sexual infantil a las autoridades competentes, como el National Center for Missing & Exploited Children (NCMEC) en los Estados Unidos y las autoridades locales correspondientes.</li>
+        </ul>
+
+        <h2>Recursos de Ayuda</h2>
+        <p>Si tú o alguien que conoces necesita ayuda o quiere denunciar un caso de explotación infantil, por favor, contacta a las autoridades locales o a organizaciones especializadas.</p>
+
+        <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">Última actualización: 15 de julio de 2025</p>
+    </main>
+
+</body>
+</html>
